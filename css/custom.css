@@ -1,0 +1,47 @@
+body {
+    padding-top: 65px;
+}
+
+nav {
+    height: 65px;
+    position: fixed !important;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+    padding-top: 5px;
+}
+
+.nav-up {
+    top: -65px;
+}
+
+.primary-color {
+    color: #00ab6b!important;
+}
+
+.primary-bg-color {
+    background-color: #00ab6b!important;
+}
+
+.bg-color {
+    background-color: white!important;
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 17px;
+    color: #00ab6b!important;
+}
+
+.blog-heading {
+    --x-height-multiplier: 0.363;
+    --baseline-multiplier: 0.157;
+    font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    margin-left: -2.5px;
+    line-height: 1.04;
+    letter-spacing: -.028em;
+    color: rgba(0, 0, 0, .8);
+}
