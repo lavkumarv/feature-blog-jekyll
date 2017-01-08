@@ -76,7 +76,6 @@ pre {
 
 .quotes {
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(39, 243, 106, .1), rgba(39, 243, 106, .1));
     transition: .2s background-color;
     cursor: pointer;
     font-family: medium-content-slab-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -91,7 +90,7 @@ pre {
 
 .quotes:hover {
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(97, 255, 160, .8), rgba(97, 255, 160, .8));
+    background-color: rgba(238, 238, 238, 0.68);
 }
 
 body, p {
@@ -123,7 +122,7 @@ h2 {
 }
 
 .img-main {
-    height: 560px;
+    height: 400px;
 }
 
 img {
@@ -138,10 +137,11 @@ img {
 
 .share {
     padding: 20px;
+    color: black;
 }
 
 .share-group {
-    background-color: rgba(181, 231, 212, 0.27);
+    background-color: rgba(238, 238, 238, 0.54);
     cursor: pointer;
 }
 
@@ -161,7 +161,7 @@ img {
 }
 
 hr {
-    width: 60%;
+    width: 80%;
 }
 
 .round-btn {
@@ -203,4 +203,87 @@ hr {
 .related-group {
     margin-top: 25px;
     margin-bottom: 35px;
+}
+
+.recent {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #9d9d9d;
+    cursor: pointer;
+}
+
+.recent:hover {
+    background-color: rgba(238, 238, 238, 0.53);
+    color: black;
+}
+
+.recent-item {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.recent-hr {
+    margin: 0px;
+    width: 100%;
+}
+
+.recent-title {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.tags {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 35px;
+    padding-right: 25px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    color: #9d9d9d;
+    font-size: 19px;
+    font-weight: 500;
+    background: rgba(238, 238, 238, 0.68);
+    display: inline-block;
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background-color: #EAFEF0;
+    color: black;
+}
+
+#subscription {
+    padding: 5px;
+    margin-left: 25px;
+    border-color: rgba(157, 157, 157, 0.7);
+    height: 44px;
+}
+
+input[type="text"]:focus {
+    border-color: rgba(157, 157, 157, 0.7);
+    box-shadow: 0 1px 1px rgba(157, 157, 157, 0.7) inset, 0 0 8px rgba(157, 157, 157, 0.7);
+    outline: 0 none;
+}
+
+#submit {
+    margin-left: -5px;
+    margin-top: -2px;
+    width: 120px;
+    height: 44px;
+    border-radius: 0px;
+    border-color: rgba(157, 157, 157, 0.7);
+    background-color: white;
+}
+
+#submit:hover {
+    background-color: rgb(243, 243, 243);
 }
