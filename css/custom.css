@@ -143,6 +143,7 @@ img {
 .share-group {
     background-color: rgba(238, 238, 238, 0.54);
     cursor: pointer;
+    text-align: center;
 }
 
 .author {
@@ -404,4 +405,8 @@ a {
 
 .pagination {
     margin-left: 20%;
+}
+
+#bs-example-navbar-collapse-1>ul {
+    background-color: white;
 }
