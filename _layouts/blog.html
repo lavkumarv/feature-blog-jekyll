@@ -4,54 +4,21 @@
         <div class="row">
             <div class="col-lg-7 col-lg-offset-1">
 
-                <img class="img-main" src="http://localhost:4000/images/mac.jpg" height="400">
-                <h1 class="blog-heading">Hide header on scroll down, show on scroll up</h1>
-                <p class="time"> <i class="fa fa-clock-o" aria-hidden="true"></i> Tue 23 August 2017</p>
-                <p>When was the last time you looked at a website’s menu and thought “gosh, that is just so pretty.” Unless you’re a designer, chances are it’s never. People don’t visit your website to admire the UI. They go there for the content. They go
-                    there to get shit done.</p>
+              {% if page.featured_image or page.featured_video_id %}
+                <a href="{{ page.url | prepend: site.baseurl }}" class="image-anchor">
+                    {% if page.featured_image %}
+                    <img class="img-main" src="{{ page.featured_image }}" height="400">
+                    {% endif %}
 
-                <p class="quotes">“Good design is as little design as possible.”</p>
+                    {% if page.featured_video_id %}
+                    <iframe class="img-main" src="https://www.youtube.com/embed/{{ page.featured_video_id }}" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
+                    {% endif %}
+                </a>
+                {% endif %}
+                <h1 class="blog-heading">{{ page.title }}</h1>
+                <p class="time"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ page.date | date: "%d %B %Y" }}</p>
 
-                <p>Fixed headers are fairly common nowadays with big name brands like Facebook, Twitter, Google, LinkedIn, and others using this pattern. It’s easy to carelessly copy them without any thought to improving on the pattern, but perhaps we should
-                    rethink that.
-                </p>
-                <h4> This is also hading </h4>
-                <p>More and more people are using mobile phones where screen real estate is a commodity. Even on desktops and tablets applications that get out of the way and let users focus on content feel better. There’s more room to breathe; your eyes
-                    don’t feel like squinting.
-                </p>
-                <p>How can we improve on the fixed header pattern? Here’s a proposal: hide the header as the user scrolls down, and show it again when the user scrolls up. This is not revolutionary. Other apps and websites are already doing this, and it’s
-                    pretty sweet. Here’s how you do it.
-                </p>
-
-                <p>Fixed headers are fairly common nowadays with big name brands like Facebook, Twitter, Google, LinkedIn, and others using this pattern. It’s easy to carelessly copy them without any thought to improving on the pattern, but perhaps we should
-                    rethink that.
-                </p>
-                <h4> This is also hading </h4>
-                <p>More and more people are using mobile phones where screen real estate is a commodity. Even on desktops and tablets applications that get out of the way and let users focus on content feel better. There’s more room to breathe; your eyes
-                    don’t feel like squinting. How can we improve on the fixed header pattern? Here’s a proposal: hide the header as the user scrolls down, and show it again when the user scrolls up. This is not revolutionary. Other apps and websites
-                    are already doing this, and it’s pretty sweet. Here’s how you do it.
-                </p>
-
-                <p>Fixed headers are fairly common nowadays with big name brands like Facebook, Twitter, Google, LinkedIn, and others using this pattern. It’s easy to carelessly copy them without any thought to improving on the pattern, but perhaps we should
-                    rethink that.
-                </p>
-                <h4> This is also hading </h4>
-                <p>More and more people are using mobile phones where screen real estate is a commodity. Even on desktops and tablets applications that get out of the way and let users focus on content feel better. There’s more room to breathe; your eyes
-                    don’t feel like squinting.
-                </p>
-                <p>How can we improve on the fixed header pattern? Here’s a proposal: hide the header as the user scrolls down, and show it again when the user scrolls up. This is not revolutionary. Other apps and websites are already doing this, and it’s
-                    pretty sweet. Here’s how you do it.
-                </p>
-
-                <p>Fixed headers are fairly common nowadays with big name brands like Facebook, Twitter, Google, LinkedIn, and others using this pattern. It’s easy to carelessly copy them without any thought to improving on the pattern, but perhaps we should
-                    rethink that.
-                </p>
-                <h4> This is also hading </h4>
-                <p>More and more people are using mobile phones where screen real estate is a commodity. Even on desktops and tablets applications that get out of the way and let users focus on content feel better. There’s more room to breathe; your eyes
-                    don’t feel like squinting. How can we improve on the fixed header pattern? Here’s a proposal: hide the header as the user scrolls down, and show it again when the user scrolls up. This is not revolutionary. Other apps and websites
-                    are already doing this, and it’s pretty sweet. Here’s how you do it.
-                </p>
-
+                {{ content }}
 
             </div>
             <div class="col-lg-4">
@@ -79,8 +46,12 @@
 <hr>
 <div class="page">
     <div class="col-lg-10 col-lg-offset-1">
-        <span class="btn round-btn pull-left">&larr; previous post</span>
-        <span class="btn round-btn pull-right">next post &rarr;</span>
+      {% if page.previous.url %}
+      <a href="{{page.previous.url}}"><span class="btn round-btn pull-left">&larr; {{page.previous.title}}</span></a>
+      {% endif %}
+      {% if page.next.url %}
+      <a href="{{page.next.url}}"><span class="btn round-btn pull-right">{{page.next.title}} &raquo;</span></a>
+      {% endif %}
     </div>
 </div>
 <hr> {% include footer.html %}

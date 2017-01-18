@@ -4,20 +4,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-7 col-lg-offset-1">
-                {% for post in paginator.posts %}
+              <h1>{{ page.tag }}</h1>
+                {% for post in site.tags[page.tag] %}
                     <div>
-                      {% if post.featured_image or post.featured_video_id %}
-                        <a href="{{ post.url | prepend: site.baseurl }}" class="image-anchor">
-                            {% if post.featured_image %}
-                            <img class="img-main" src="{{ post.featured_image }}" height="400">
-                            {% endif %}
-
-                            {% if post.featured_video_id %}
-                            <iframe class="img-main" src="https://www.youtube.com/embed/{{ post.featured_video_id }}" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
-                            {% endif %}
-                        </a>
-                        {% endif %}
-
                         <h1 class="blog-heading hover"><a class="blog-heading hover" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
                         <p>{{ post.lead_text }}</p>
                         <span class="time"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date_to_long_string }}</span>

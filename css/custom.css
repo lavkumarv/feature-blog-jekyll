@@ -215,13 +215,22 @@ hr {
 .recent {
     padding-left: 30px;
     padding-right: 30px;
-    color: #9d9d9d;
+    color: #9d9d9d !important;
     cursor: pointer;
 }
 
+.recent>a {
+    color: #9d9d9d !important;
+}
+
+.recent>a:hover {
+    background-color: rgba(238, 238, 238, 0.53) !important;
+    color: black !important;
+}
+
 .recent:hover {
-    background-color: rgba(238, 238, 238, 0.53);
-    color: black;
+    background-color: rgba(238, 238, 238, 0.53) !important;
+    color: black !important;
 }
 
 .recent-item {
@@ -409,4 +418,19 @@ a {
 
 #bs-example-navbar-collapse-1>ul {
     background-color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: black;
+    background: rgba(0, 171, 107, 0.75);
+}
+
+::selection {
+    color: black;
+    background: rgba(0, 171, 107, 0.75);
 }
