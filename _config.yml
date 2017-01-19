@@ -2,7 +2,7 @@ title: Feature Blog
 email: lav.kumar.dev@gmail.com
 description: >
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 include: ['_pages']

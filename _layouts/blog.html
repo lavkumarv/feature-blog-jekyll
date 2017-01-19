@@ -32,12 +32,12 @@
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
                 <h2 class="share-group">
-                  <i class="fa fa-facebook share" aria-hidden="true"></i>
-                  <i class="fa fa-twitter share" aria-hidden="true"></i>
-                  <i class="fa fa-linkedin share" aria-hidden="true"></i>
-                  <i class="fa fa-instagram share" aria-hidden="true"></i>
-                  <i class="fa fa-pinterest-p share" aria-hidden="true"></i>
-                  <i class="fa fa-google-plus share" aria-hidden="true"></i>
+                  <a href="http://twitter.com/share?text={{page.title}}&url={{page.url | prepend: site.url}}&via=<TWITTER-HANDLE>&related" target="_blank"><i class="fa fa-twitter share" aria-hidden="true"></i></a>
+                  <a href="http://www.facebook.com/sharer.php?u={{page.url | prepend: site.url}}&p[title]=<{{page.title}}" target="_blank"><i class="fa fa-facebook share" aria-hidden="true"></i></a>
+                  <a href="http://www.linkedin.com/shareArticle?mini=true&url={{page.url | prepend: site.url}}&title={{page.title}}&summary={{page.lead_text}}&source={{page.url | prepend: site.url}}" target="_blank"><i class="fa fa-linkedin share" aria-hidden="true"></i></a>
+                  <a href="http://www.tumblr.com/share/link?url={{page.url | prepend: site.url}}&name={{page.title}}&description={{page.lead_text}}" target="_blank"><i class="fa fa-instagram share" aria-hidden="true"></i></a>
+                  <a href="http://pinterest.com/pin/create/button/?url={{page.url | prepend: site.url}}&description={{page.title}}" target="_blank"><i class="fa fa-pinterest-p share" aria-hidden="true"></i></a>
+                  <a href="https://plus.google.com/share?url={{page.url | prepend: site.url}}" target="_blank"><i class="fa fa-google-plus share" aria-hidden="true"></i></a>
                 </h2>
             </div>
         </div>

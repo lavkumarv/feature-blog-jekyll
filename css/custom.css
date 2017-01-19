@@ -363,8 +363,12 @@ body::-webkit-scrollbar-thumb {
     outline: 1px solid slategrey;
 }
 
-#search {
+#search_box {
     width: 200px;
+}
+
+#search_results {
+    width: 300px;
 }
 
 .navbar-default .navbar-nav>li>a, .navbar-header>a {

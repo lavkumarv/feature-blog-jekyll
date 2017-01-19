@@ -18,13 +18,13 @@
       {% if categories_list.first[0] == null %}
         {% for category in categories_list %}
         <div class="recent">
-            <a href="#{{ category }}" class="recent-item"> {{ category | capitalize }} ({{ site.tags[category].size }})</a>
+            <a href="{{ category | prepend: '/category/' | prepend: site.baseurl }}" class="recent-item"> {{ category | capitalize }} ({{ site.tags[category].size }})</a>
         </div>
         {% endfor %}
       {% else %}
         {% for category in categories_list %}
         <div class="recent">
-            <a href="#{{ tag[0] }}" class="recent-item"> {{ category[0] | capitalize }} ({{ category[1].size }})</a>
+            <a href="{{ category[0] | prepend: '/category/' | prepend: site.baseurl }}" class="recent-item"> {{ category[0] | capitalize }} ({{ category[1].size }})</a>
         </div>
         {% endfor %}
       {% endif %}
@@ -38,7 +38,7 @@
       {% for tag in site.tags %}
         {% assign t = tag | first %}
         {% assign posts = tag | last %}
-        <a href="{{ t | prepend: site.baseurl }}"><span class="tag">{{t | downcase | replace:" ","-" }}</span></a>
+        <a href="{{ t | prepend: '/tag/' | prepend: site.baseurl }}"><span class="tag">{{t | downcase | replace:" ","-" }}</span></a>
       {% endfor %}
     </div>
 </div>
