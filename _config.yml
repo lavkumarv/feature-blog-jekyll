@@ -1,15 +1,16 @@
-title: Feature Blog
-email: lav.kumar.dev@gmail.com
-description: >
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
+# Basic settings
+description:  This is personal blog.
+baseurl: "/"
+url: "localhost:4000"
 twitter_username: jekyllrb
 github_username:  jekyll
 include: ['_pages']
 
 # Build settings
-markdown: kramdown
-theme: minima
+markdown:    kramdown
+highlighter: pygments
+lsi:         false
+excerpt_separator: "\n\n"
 gems:
   - jekyll-feed
   - jekyll-paginate
@@ -17,9 +18,27 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-# Outputting
-#permalink:     /:title.html
-
+# pagination
 gems: [jekyll-paginate]
-paginate: 2
+paginate: 5
 paginate_path: "/page:num/"
+
+# Enable comments
+comments: true
+
+# Markdown settings
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+  coderay:
+    coderay_wrap:              div
+    coderay_line_numbers:      inline
+    coderay_line_number_start: 1
+    coderay_tab_width:         4
+    coderay_bold_every:        10
+    coderay_css:               style

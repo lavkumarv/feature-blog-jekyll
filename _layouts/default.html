@@ -6,22 +6,22 @@
             <div class="col-lg-7 col-lg-offset-1">
                 {% for post in paginator.posts %}
                     <div>
-                      {% if post.featured_image or post.featured_video_id %}
-                        <a href="{{ post.url | prepend: site.baseurl }}" class="image-anchor">
-                            {% if post.featured_image %}
-                            <img class="img-main" src="{{ post.featured_image }}" height="400">
-                            {% endif %}
+                      {% if post.image or post.video %}
+                          <a href="{{ post.url | prepend: site.url }}" class="image-anchor">
 
-                            {% if post.featured_video_id %}
-                            <iframe class="img-main" src="https://www.youtube.com/embed/{{ post.featured_video_id }}" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
-                            {% endif %}
-                        </a>
-                        {% endif %}
+                          {% if post.image %}
+                          <img class="img-main" src="{{ post.image | prepend: site.url }}" height="400">
+                          {% endif %}
 
-                        <h1 class="blog-heading hover"><a class="blog-heading hover" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+                          {% if post.video %}
+                          <iframe class="img-main" src="https://www.youtube.com/embed/{{ post.video }}" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
+                          {% endif %}
+
+                      </a> {% endif %}
+                        <h1 class="blog-heading hover"><a class="blog-heading hover" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a></h1>
                         <p>{{ post.lead_text }}</p>
                         <span class="time"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date_to_long_string }}</span>
-                        <a href="{{ post.url | prepend: site.baseurl }}"><span class="btn round-btn pull-right read">Read &rarr;</span></a>
+                        <a href="{{ post.url | prepend: site.url }}"><span class="btn round-btn pull-right read">Read &rarr;</span></a>
                         <hr>
                     </div>
                 {% endfor %}

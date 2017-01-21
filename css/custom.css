@@ -421,7 +421,7 @@ a {
 }
 
 #bs-example-navbar-collapse-1>ul {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 a:hover {
@@ -437,4 +437,27 @@ a:hover {
 ::selection {
     color: black;
     background: rgba(0, 171, 107, 0.75);
+}
+
+#mc-embedded-subscribe {
+    margin-top: 10px !important;
+}
+
+#mc_embed_signup {
+    background: #fff;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 100%;
+}
+
+#error {
+    font-size: 140px;
+    font-weight: 900;
+}
+
+#search_results {
+    color: black;
+    width: 270px;
+    font-size: 18px;
+    background-color: white;
 }

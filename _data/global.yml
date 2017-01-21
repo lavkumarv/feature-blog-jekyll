@@ -7,3 +7,20 @@ footer_text: 'This text is footer text. Footer text goes here.'
 # Admin Settings
 admin_name: 'Lav Vishwakarma'
 admin_email: 'lav.kumar.dev@gmail.com'
+
+#####################################################################
+#About Page
+author_name: 'Lav Kumar Vishwakarma'
+author_profession: 'Full Stack Developer'
+author_description: 'More and more people are using mobile phones where screen real estate is a commodity. Even on desktops and tablets applications that get out of the way and let users focus on content feel better. There’s more room to breathe; your eyes
+    don’t feel like squinting. How can we improve on the fixed header pattern?'
+author_image: '/images/author.jpg'
+
+# social proiles
+facebook: ''
+twitter: ''
+linkedin: ''
+instagram: ''
+github: ''
+google-plus: ''
+#####################################################################

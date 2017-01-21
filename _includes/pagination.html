@@ -1,23 +1,23 @@
 <div class="container">
     <ul class="pagination">
 
-      {% if paginator.previous_page %}
-      <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">«</a></li>
-      {% endif %}
+        {% if paginator.previous_page %}
+          <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">«</a></li>
+        {% endif %}
 
-      {% for page in (1..paginator.total_pages) %}
+        {% for page in (1..paginator.total_pages) %}
           {% if page == paginator.page %}
-          <li class="active"><a href="#">{{ page }} <span class="sr-only">(current)</span></a></li>
+              <li class="active"><a href="#">{{ page }} <span class="sr-only">(current)</span></a></li>
           {% elsif page == 1 %}
-          <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+              <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
           {% else %}
-          <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+              <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
           {% endif %}
-      {% endfor %}
+        {% endfor %}
 
-      {% if paginator.next_page %}
-      <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">»</a></li>
-      {% endif %}
+        {% if paginator.next_page %}
+            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">»</a></li>
+        {% endif %}
 
     </ul>
 </div>

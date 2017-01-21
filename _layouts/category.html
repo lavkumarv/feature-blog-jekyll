@@ -4,17 +4,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-7 col-lg-offset-1">
-              <h1>Tagged {{ page.category }}</h1>
-              <hr>
+                <h1>Tagged {{ page.category }}</h1>
+                <hr>
                 {% assign posts = site.categories[page.category] %}
                 {% for post in posts %}
-                <h1 class="blog-heading hover"><a class="blog-heading hover" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-                <p>{{ post.lead_text }}</p>
-                <span class="time"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date_to_long_string }}</span>
-                <a href="{{ post.url | prepend: site.baseurl }}"><span class="btn round-btn pull-right read">Read &rarr;</span></a>
-                <hr>
+                    <h1 class="blog-heading hover"><a class="blog-heading hover" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a></h1>
+                    <p>{{ post.lead_text }}</p>
+                    <span class="time"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ post.date | date_to_long_string }}</span>
+                    <a href="{{ post.url | prepend: site.url }}"><span class="btn round-btn pull-right read">Read &rarr;</span></a>
+                    <hr>
                 {% endfor %}
-
             </div>
             <div class="col-lg-4">
                 {% include sidebar.html %}

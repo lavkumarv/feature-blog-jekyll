@@ -1,20 +1,23 @@
 {% include header.html %}
+
+<!-- post -->
 <section>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-7 col-lg-offset-1">
 
-              {% if page.featured_image or page.featured_video_id %}
-                <a href="{{ page.url | prepend: site.baseurl }}" class="image-anchor">
-                    {% if page.featured_image %}
-                    <img class="img-main" src="{{ page.featured_image }}" height="400">
+                {% if page.image or page.video %}
+                    <a href="#" class="image-anchor">
+
+                    {% if page.image %}
+                    <img class="img-main" src="{{ page.image | prepend: site.url }}" height="400">
                     {% endif %}
 
-                    {% if page.featured_video_id %}
-                    <iframe class="img-main" src="https://www.youtube.com/embed/{{ page.featured_video_id }}" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
+                    {% if page.video %}
+                    <iframe class="img-main" src="https://www.youtube.com/embed/{{ page.video }}" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
                     {% endif %}
-                </a>
-                {% endif %}
+
+                </a> {% endif %}
                 <h1 class="blog-heading">{{ page.title }}</h1>
                 <p class="time"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ page.date | date: "%d %B %Y" }}</p>
 
@@ -27,6 +30,9 @@
         </div>
     </div>
 </section>
+
+
+<!-- sharing options -->
 <section>
     <div class="container-fluid">
         <div class="row">
@@ -44,14 +50,42 @@
     </div>
 </section>
 <hr>
+
+
+<!-- next and prious button -->
 <div class="page">
     <div class="col-lg-10 col-lg-offset-1">
-      {% if page.previous.url %}
-      <a href="{{page.previous.url}}"><span class="btn round-btn pull-left">&larr; {{page.previous.title}}</span></a>
-      {% endif %}
-      {% if page.next.url %}
-      <a href="{{page.next.url}}"><span class="btn round-btn pull-right">{{page.next.title}} &raquo;</span></a>
-      {% endif %}
+        {% if page.previous.url %}
+        <a href="{{page.previous.url}}"><span class="btn round-btn pull-left">&larr; {{page.previous.title}}</span></a> {% endif %} {% if page.next.url %}
+        <a href="{{page.next.url}}"><span class="btn round-btn pull-right">{{page.next.title}} &raquo;</span></a> {% endif %}
     </div>
 </div>
-<hr> {% include footer.html %}
+<hr>
+
+<!-- Sharing buttons -->
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7 col-lg-offset-1">
+
+                {% if site.comments %}
+                  <div id="disqus_thread"></div>
+                  <script>
+                      (function() {
+                          var d = document,
+                              s = d.createElement('script');
+                          s.src = '//lavkumarv-github-io.disqus.com/embed.js';
+                          s.setAttribute('data-timestamp', +new Date());
+                          (d.head || d.body).appendChild(s);
+                      })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+{% include footer.html %}

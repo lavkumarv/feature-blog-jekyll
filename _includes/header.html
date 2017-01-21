@@ -1,76 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>This is my first blog</title>
-    <!-- facebook Open Graph Metadatas -->
-<meta content="your_facebook_app_id" property="fb:app_id">
-<meta content="{{ site.title }}" property="og:site_name">
-{% if page.title %}
-  <meta content="{{ page.title }}" property="og:title">
-{% else %}
-  <meta content="{{ site.title }}" property="og:title">
-{% endif %}
-{% if page.title %}
-  <meta content="article" property="og:type">
-{% else %}
-  <meta content="website" property="og:type">
-{% endif %}
-{% if page.description %}
-  <meta content="{{ page.description }}" property="og:description">
-{% else %}
-  <meta content="{{ site.description }}" property="og:description">
-{% endif %}
-{% if page.url %}
-  <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-{% endif %}
-{% if page.date %}
-  <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-  <meta content="{{ site.url }}/about/" property="article:author">
-{% endif %}
-{% if page.image %}
-  <meta content="/img/posts/{{ page.image }}" property="og:image">
-{% else %}
-  <meta content="/img/logo-high-resolution.png" property="og:image">
-{% endif %}
-{% if page.categories %}
-  {% for category in page.categories limit:1 %}
-  <meta content="{{ category }}" property="article:section">
-  {% endfor %}
-{% endif %}
-{% if page.tags %}
-  {% for tag in page.tags %}
-  <meta content="{{ tag }}" property="article:tag">
-  {% endfor %}
-{% endif %}
+    <title>{% if page.title %}{{ page.title }} ♥ {{ site.data.global.title }}{% elsif post.title %}{{ post.title }} ♥ {{ site.data.global.title }}{% else %}{{ site.data.global.title }} ♥ {{ site.data.global.description }}{% endif %}</title>
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vdaubry">
-<meta name="twitter:creator" content="@vdaubry">
-{% if page.title %}
-  <meta name="twitter:title" content="{{ page.title }}">
-{% else %}
-  <meta name="twitter:title" content="{{ site.title }}">
-{% endif %}
-{% if page.url %}
-  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-{% endif %}
-{% if page.description %}
-  <meta name="twitter:description" content="{{ page.description }}">
-{% else %}
-  <meta name="twitter:description" content="{{ site.description }}">
-{% endif %}
-{% if page.header-img %}
-  <meta name="twitter:image:src" content="{{ site.url }}/{{ page.header-img }}">
-{% endif %}
+    <!-- facebook Open Graph Metadatas -->
+    <meta content="your_facebook_app_id" property="fb:app_id">
+    <meta content="{{ site.title }}" property="og:site_name">
+
+    {% if page.title %}
+        <meta content="{{ page.title }}" property="og:title">
+    {% else %}
+        <meta content="{{ site.title }}" property="og:title">
+    {% endif %}
+
+    {% if page.title %}
+        <meta content="article" property="og:type">
+    {% else %}
+        <meta content="website" property="og:type">
+    {% endif %}
+
+    {% if page.description %}
+        <meta content="{{ page.description }}" property="og:description">
+    {% else %}
+        <meta content="{{ site.description }}" property="og:description">
+    {% endif %}
+
+    {% if page.url %}
+        <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    {% endif %}
+
+    {% if page.date %}
+        <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+        <meta content="{{ site.url }}/about/" property="article:author">
+    {% endif %}
+
+    {% if page.image %}
+        <meta content="/images/{{ page.image }}" property="og:image">
+    {% else %}
+        <meta content="/images/default" property="og:image">
+    {% endif %}
+
+    {% if page.categories %}
+      {% for category in page.categories limit:1 %}
+          <meta content="{{ category }}" property="article:section">
+      {% endfor %}
+    {% endif %}
+
+    {% if page.tags %}
+      {% for tag in page.tags %}
+          <meta content="{{ tag }}" property="article:tag">
+      {% endfor %}
+    {% endif %}
+
+
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@vdaubry">
+    <meta name="twitter:creator" content="@vdaubry">
+    {% if page.title %}
+        <meta name="twitter:title" content="{{ page.title }}">
+    {% else %}
+        <meta name="twitter:title" content="{{ site.title }}">
+    {% endif %}
+
+    {% if page.url %}
+        <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    {% endif %}
+
+    {% if page.description %}
+        <meta name="twitter:description" content="{{ page.description }}">
+    {% else %}
+        <meta name="twitter:description" content="{{ site.description }}">
+    {% endif %}
+
+    {% if page.image %}
+        <meta name="twitter:image:src" content="{{ site.url }}/{{ page.image }}">
+    {% else %}
+        <meta content="/images/default" name="twitter:image:src">
+    {% endif %}
 
     <!-- Bootstrap -->
-    <link href="http://localhost:4000/css/bootstrap.css" rel="stylesheet">
-    <link href="http://localhost:4000/css/custom.css" rel="stylesheet">
+    <link href="{{ site.url }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ site.url }}/css/custom.css" rel="stylesheet">
+    
+    <!-- Begin MailChimp Signup Form -->
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -84,7 +101,7 @@
 <body>
     <nav class="navbar navbar-default nav-down bg-color">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -92,14 +109,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-                <a class="navbar-brand nav-link" href="#">Feature Blog</a>
+                <a class="navbar-brand nav-link" href="/">{{ site.data.global.title }}</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" class="nav-link">About</a></li>
-                    <li><a href="#" class="nav-link">GitHub</a></li>
+                    {% for item in site.data.nav.main %}
+                        <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+                    {% endfor %}
                     <li>
                         <div class="col-sm-3 col-md-3">
                             <form class="navbar-form" role="search" action="get" id="site_search">
@@ -114,9 +131,6 @@
                         </div>
                     </li>
                 </ul>
-
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
