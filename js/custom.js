@@ -36,3 +36,18 @@ function hasScrolled() {
 
     lastScrollTop = st;
 }
+
+$(document).mouseup(function(e) {
+    var container = $("#search-div");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        &&
+        container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        $("#search_results").hide();
+    } else {
+        if ($("#search-btn").is(e.target)) {
+            $("#search_results").show();
+        }
+    }
+});

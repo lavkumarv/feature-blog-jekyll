@@ -2,8 +2,8 @@
 description:  This is personal blog.
 baseurl: "/"
 url: "localhost:4000"
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: LAV_K_V
+github_username:  lavkumarv
 include: ['_pages']
 
 # Build settings

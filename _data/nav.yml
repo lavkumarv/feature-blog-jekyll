@@ -1,3 +1,2 @@
 main:
     - { url: '/about', text: 'About' }
-    - { url: '/https://github.com/lavkumarv', text: 'Github' }

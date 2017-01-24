@@ -1,91 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} ♥ {{ site.data.global.title }}{% elsif post.title %}{{ post.title }} ♥ {{ site.data.global.title }}{% else %}{{ site.data.global.title }} ♥ {{ site.data.global.description }}{% endif %}</title>
-
-    <!-- facebook Open Graph Metadatas -->
-    <meta content="your_facebook_app_id" property="fb:app_id">
-    <meta content="{{ site.title }}" property="og:site_name">
-
-    {% if page.title %}
-        <meta content="{{ page.title }}" property="og:title">
-    {% else %}
-        <meta content="{{ site.title }}" property="og:title">
-    {% endif %}
-
-    {% if page.title %}
-        <meta content="article" property="og:type">
-    {% else %}
-        <meta content="website" property="og:type">
-    {% endif %}
-
-    {% if page.description %}
-        <meta content="{{ page.description }}" property="og:description">
-    {% else %}
-        <meta content="{{ site.description }}" property="og:description">
-    {% endif %}
-
-    {% if page.url %}
-        <meta content="{{ site.url }}{{ page.url }}" property="og:url">
-    {% endif %}
-
-    {% if page.date %}
-        <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-        <meta content="{{ site.url }}/about/" property="article:author">
-    {% endif %}
-
-    {% if page.image %}
-        <meta content="/images/{{ page.image }}" property="og:image">
-    {% else %}
-        <meta content="/images/default" property="og:image">
-    {% endif %}
-
-    {% if page.categories %}
-      {% for category in page.categories limit:1 %}
-          <meta content="{{ category }}" property="article:section">
-      {% endfor %}
-    {% endif %}
-
-    {% if page.tags %}
-      {% for tag in page.tags %}
-          <meta content="{{ tag }}" property="article:tag">
-      {% endfor %}
-    {% endif %}
+    <meta name="description" content="{{ page.lead_text }}" />
 
 
-    <!-- Twitter meta tags -->
+    <!-- Update your html tag to include the itemscope and itemtype attributes. -->
+    <html itemscope itemtype="http://schema.org/Product">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{ page.title }}">
+    <meta itemprop="description" content="{{ page.lead_text }}"> {% if page.image %}
+    <meta itemprop="image" content="{{ page.url }}{{ page.image }}"> {% else %}
+    <meta content="{{ site.url }}/images/default.jpg" property="og:image"> {% endif %}
+
+
+    <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@vdaubry">
-    <meta name="twitter:creator" content="@vdaubry">
-    {% if page.title %}
-        <meta name="twitter:title" content="{{ page.title }}">
-    {% else %}
-        <meta name="twitter:title" content="{{ site.title }}">
-    {% endif %}
+    <meta name="twitter:site" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.lead_text }}">
+    <meta name="twitter:creator" content="{{ site.data.global.author_name }}"> {% if page.image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.image }}"> {% else %}
+    <meta name="twitter:image" content="{{ site.url }}/images/default.jpg"> {% endif %}
 
-    {% if page.url %}
-        <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
-    {% endif %}
 
-    {% if page.description %}
-        <meta name="twitter:description" content="{{ page.description }}">
-    {% else %}
-        <meta name="twitter:description" content="{{ site.description }}">
-    {% endif %}
-
-    {% if page.image %}
-        <meta name="twitter:image:src" content="{{ site.url }}/{{ page.image }}">
-    {% else %}
-        <meta content="/images/default" name="twitter:image:src">
-    {% endif %}
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" /> {% if page.image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.image }}" /> {% else %}
+    <meta property="og:image" content="{{ site.url }}/images/default.jpg" /> {% endif %}
+    <meta property="og:description" content="{{ page.lead_text }}" />
+    <meta property="og:site_name" content="{{site.data.global.title}}" /> {% if page.url %}
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url"> {% endif %} {% if page.categories %} {% for category in page.categories limit:1 %}
+    <meta content="{{ category }}" property="article:section"> {% endfor %} {% endif %} {% if page.tags %} {% for tag in page.tags %}
+    <meta content="{{ tag }}" property="article:tag"> {% endfor %} {% endif %}
 
     <!-- Bootstrap -->
     <link href="{{ site.url }}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ site.url }}/css/custom.css" rel="stylesheet">
-    
+
     <!-- Begin MailChimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
@@ -115,10 +74,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     {% for item in site.data.nav.main %}
-                        <li><a href="{{ item.url }}">{{ item.text }}</a></li>
+                    <li><a href="{{ item.url }}">{{ item.text }}</a></li>
                     {% endfor %}
                     <li>
-                        <div class="col-sm-3 col-md-3">
+                        <div class="col-sm-3 col-md-3" id="search-div">
                             <form class="navbar-form" role="search" action="get" id="site_search">
                                 <div class="input-group">
                                     <input type="text" id="search_box" class="form-control" placeholder="Search" name="q">

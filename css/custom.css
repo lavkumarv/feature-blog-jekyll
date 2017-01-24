@@ -29,6 +29,14 @@ nav {
     background-color: white!important;
 }
 
+.sec-color {
+    color: black !important;
+}
+
+.sec-color:hover {
+    color: #00AB6B;
+}
+
 .nav-link {
     font-weight: 600;
     font-size: 17px;
@@ -460,4 +468,23 @@ a:hover {
     width: 270px;
     font-size: 18px;
     background-color: white;
+    border: 1px solid #dbdfe4;
+    padding-left: 25px;
+    padding-top: 20px;
+    box-shadow: 0 0 20px #000;
+    display: none;
+}
+
+#mc_embed_signup .button {
+    font-size: 21px !important;
+}
+
+.recent:hover .recent-item {
+    color: black !important;
+}
+
+@media only screen and (max-device-width: 770px) {
+    #bs-example-navbar-collapse-1>ul {
+        background-color: white;
+    }
 }
