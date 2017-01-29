@@ -103,9 +103,12 @@ admin_email: 'lav.kumar.dev@gmail.com'
 #About Page
 author_name: 'Lav Kumar Vishwakarma'
 author_profession: 'Full Stack Developer'
-author_description: 'A computer science graduate student at University Institute of Technology, RGPV with great interest in Software development and coding efficient software.</br></br>
-My 3+ years of experience in web technologies like J2EE/Jersey, Node.js, Angular.js, c#, MongoDB, MySQL, Linux with Appointy and TechShanty provides me with a rich experience in coding and maintaining large scalable applications.</br></br>
-Working at Appointy as Software Developer Intern, I was involved in Full stack development of a SAAS application which is used by 65,000+ business worldwide. '
+author_description: 'A computer science graduate student at University Institute of Technology,
+RGPV with great interest in Software development and coding efficient software.</br></br>
+My 3+ years of experience in web technologies like J2EE/Jersey, Node.js, Angular.js, c#, MongoDB, MySQL,
+Linux with Appointy and TechShanty provides me with a rich experience in coding and maintaining large scalable applications.</br></br>
+Working at Appointy as Software Developer Intern, I was involved in Full stack development of a SAAS
+application which is used by 65,000+ business worldwide. '
 author_image: '/images/author.jpg'
 
 # social proiles
@@ -136,7 +139,7 @@ date: 2017-01-24 12:11:34
 categories: blog
 tags: code
 image: '/images/default.jpg'
-lead_text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maiores quisquam id sunt, a architecto molestias velit, distinctio quidem non, nostrum provident quibusdam enim. Neque ipsam temporibus commodi facere minima.'
+lead_text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 ```
 Video Post:
 ``` json
@@ -146,7 +149,7 @@ date: 2017-01-24 12:11:34
 categories: blog
 tags: code
 image: '/images/default.jpg'
-lead_text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maiores quisquam id sunt, a architecto molestias velit, distinctio quidem non, nostrum provident quibusdam enim. Neque ipsam temporibus commodi facere minima.'
+lead_text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 ```
 ## Built With
 
