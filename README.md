@@ -1,5 +1,4 @@
 # feature-blog-jekyll [![Code Climate](https://codeclimate.com/github/lavkumarv/feature-blog-jekyll/badges/gpa.svg)](https://codeclimate.com/github/lavkumarv/feature-blog-jekyll) <a href="https://codeclimate.com/github/lavkumarv/feature-blog-jekyll"><img src="https://codeclimate.com/github/lavkumarv/feature-blog-jekyll/badges/issue_count.svg" /></a>
-<img src="logo.png" width="400"/>
 
 Feature Blog is a minimalist, beautiful, responsive theme for Jekyll. It is built using the Bootstrap 3.
 
@@ -13,7 +12,7 @@ Home Page:
 * Option to set featured image & video in post
 * Pagination support
 * Disqus comments if you choose to enable
-* MailChip Intrigration for subscription
+* MailChip Integration for subscription
 * Tags for [Open Graph](https://developers.facebook.com/docs/opengraph/), [Twitter Cards](https://dev.twitter.com/docs/cards) and Schema.org for a better social sharing experience
 * Support for recent post
 * SEO Enabled theme
@@ -22,8 +21,8 @@ Home Page:
 * Ajax based search
 * Sitemap for search engines
 * Google Fonts
-* Fontawesome icons
-* Easy to configure and cutomize
+* Font awesome icons
+* Easy to configure and customize
 
 ## Basic Setup for a new Jekyll site
 
@@ -106,7 +105,8 @@ author_profession: 'Full Stack Developer'
 author_description: 'A computer science graduate student at University Institute of Technology,
 RGPV with great interest in Software development and coding efficient software.</br></br>
 My 3+ years of experience in web technologies like J2EE/Jersey, Node.js, Angular.js, c#, MongoDB, MySQL,
-Linux with Appointy and TechShanty provides me with a rich experience in coding and maintaining large scalable applications.</br></br>
+Linux with Appointy and TechShanty provides me with a rich experience in coding and maintaining
+ large scalable applications.</br></br>
 Working at Appointy as Software Developer Intern, I was involved in Full stack development of a SAAS
 application which is used by 65,000+ business worldwide. '
 author_image: '/images/author.jpg'
@@ -157,7 +157,7 @@ lead_text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 
 ## Contributing
 
-Contributions are welcome!. Feel free to add new feature or fix a bug.
+Contributions are welcome!. Feel free to add a new feature or fix a bug.
 
 ## Authors
 
