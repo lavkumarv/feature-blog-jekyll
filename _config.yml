@@ -1,7 +1,7 @@
 # Basic settings
 description:  This is personal blog.
 baseurl: "/"
-url: "localhost:4000"
+url: "https://lavkumarv.github.io" 
 twitter_username: LAV_K_V
 github_username:  lavkumarv
 include: ['_pages']
