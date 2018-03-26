@@ -1,27 +1,25 @@
 # Site Settings
-title: 'Lav Vishwakarma'
+title: 'machme'
 description: 'My personal Blog'
-url: 'https://lavkumarv.github.io'
+url: 'https://machme.github.io'
 
 # Admin Settings
-admin_name: 'Lav Vishwakarma'
-admin_email: 'lav.kumar.dev@gmail.com'
+admin_name: 'samuel'
+admin_email: 'luasnk@gmail.com'
 
 #####################################################################
 #About Page
-author_name: 'Lav Kumar Vishwakarma'
-author_profession: 'Full Stack Developer'
-author_description: 'A computer science graduate student at University Institute of Technology, RGPV with great interest in Software development and coding efficient software.</br></br>
-My 3+ years of experience in web technologies like J2EE/Jersey, Node.js, Angular.js, c#, MongoDB, MySQL, Linux with Appointy and TechShanty provides me with a rich experience in coding and maintaining large scalable applications.</br></br>
-Working at Appointy as Software Developer Intern, I was involved in Full stack development of a SAAS application which is used by 65,000+ business worldwide. '
-author_image: '/images/author.jpg'
+author_name: 'machme'
+author_profession: 'Web Developer'
+author_description: '컴퓨터 공학을 전공하고 웹프로그래머 업무를 하고 있습니다.'
+author_image: '/images/author.jp'
 
 # social proiles
-facebook: 'https://www.facebook.com/lavkumarv'
-twitter: 'https://twitter.com/LAV_K_V'
-linkedin: 'https://www.linkedin.com/in/lav-vishwakarma/'
-instagram: 'https://www.instagram.com/vishwakarmalav/'
-github: 'https://github.com/lavkumarv'
-google-plus: 'https://plus.google.com/+LAVKUMARVISHWAKARMAdev'
-stackoverflow: 'http://stackoverflow.com/users/4703818/lav-kumar-vishwakarma'
+facebook: 'https://www.facebook.com/'
+twitter: 'https://twitter.com/'
+linkedin: 'https://www.linkedin.com/'
+instagram: 'https://www.instagram.com/'
+github: 'https://github.com/machme'
+google-plus: 'https://plus.google.com/'
+stackoverflow: 'http://stackoverflow.com/'
 #####################################################################
